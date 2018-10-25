@@ -45,7 +45,7 @@ body {
 }
 #msform .action-button {
 	width: 100px;
-	background: #FF6B6B;
+	background: #ac2925;
 	font-weight: bold;
 	color: white;
 	border: 0 none;
@@ -55,7 +55,7 @@ body {
 	margin: 10px 5px;
 }
 #msform .action-button:hover, #msform .action-button:focus {
-	box-shadow: 0 0 0 2px white, 0 0 0 3px #FF6B6B;
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #ac2925;
 }
 .fs-title {
 	font-size: 15px;
@@ -109,7 +109,7 @@ body {
 	content: none;
 }
 #progressbar li.active:before,  #progressbar li.active:after{
-	background: #FF6B6B;
+	background: #ac2925;
 	color: white;
 }
 

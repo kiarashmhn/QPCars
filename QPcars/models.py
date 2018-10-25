@@ -19,6 +19,7 @@ class User(db.Model, UserMixin):
     authenticated = db.Column(db.Boolean)
     mobile_num = db.Column(db.String(15))
     phone_num = db.Column(db.String(15))
+    cars = db.relationship('Car', backref='user', lazy=True)
 
     @property
     def password(self):
@@ -59,8 +60,8 @@ class User(db.Model, UserMixin):
         }
 
 
-class Car:
-    id = db.Column(db.Integer)
+class Car(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20))
     factory = db.Column(db.String(20))
     kilometer = db.Column(db.Integer)
@@ -68,10 +69,25 @@ class Car:
     color = db.Column(db.String(20))
     description = db.Column(db.String(100))
     automate = db.Column(db.Boolean)
-    owner = db.Column(db.String(20))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     price = db.Column(db.Integer)
 
     def __repr__(self):
-        return "<Car '{}'>".format(self.username)
+        return "<Car '{}'>".format(self.name)
 
+    @staticmethod
+    def get_by_owner(user_id):
+        return User.query.filter_by(user_id=user_id)
 
+    def serialize(self):
+        return {
+            'name' : self.name,
+            'factory' : self.factory,
+            'kilometer' : self.kilometer,
+            'year' : self.year,
+            'color' : self.color,
+            'description' : self.description,
+            'automate' : self.automate,
+            'user_id' : self.user_id,
+            'price' : self.price
+        }

@@ -26,7 +26,7 @@ def load_user(user_id):
 
 login_manager.login_view = 'login'
 # manager = Manager(app)
-from QPcars.models import User
+from QPcars.models import User, Car
 
 db.drop_all()
 db.create_all()
@@ -80,7 +80,37 @@ def list():
         return jsonify([user.serialize() for user in users])
 
 
+@app.route('/app/addCar', methods=["POST"])
+@login_required
+def add_car():
+    if request.method == "POST":
+        req = request.get_json()
+        if User.query.filter_by(id=req.get("user_id")).first() is not None:
+            car = Car(name=req.get("name"),
+                      factory=req.get("factory"),
+                      kilometer=req.get("kilometer"),
+                      year=req.get("year"),
+                      color=req.get("color"),
+                      description=req.get("description"),
+                      automate=req.get("automate"),
+                      user_id=req.get("user_id"),
+                      price=req.get("price"))
+            db.session.add(car)
+            db.session.commit()
+            print("car added")
+            return jsonify(car.serialize())
+
+
+@app.route('/app/listCar', methods=["GET"])
+@login_required
+def list_car():
+    if request.method == "GET":
+        cars = Car.query.all()
+        return jsonify([car.serialize() for car in cars])
+
+
 @app.route('/web/login_page')
+@login_required
 def web_login_page():
     return render_template('Hp.html', error=None)
 
@@ -103,7 +133,7 @@ def web_signup_page():
     return render_template('signup.html', error=None)
 
 
-@app.route('/web/signup')
+@app.route('/web/signup',methods=["POST"])
 def web_signup():
     name = request.form["name"]
     lastname = request.form["family"]
@@ -120,6 +150,7 @@ def web_signup():
     if User.get_by_username(username) is not None or User.get_by_email(email) is not None:
         error = 'Username or email is already taken'
     if password == cpass:
+        print("checked")
         u = User(name=name,username=username,
                  lastName=lastname,age=age,
                  identificationId=id,gender=gender,

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="../static/img/icon.png">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/normalize.css">
+    <link rel="apple-touch-icon" href="../static/apple-touch-icon.png">
+
+    <script src="../static/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>TC</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+
+        .Login {
+            background: url("../static/img/alireza-attari-569127-unsplash.jpg");
+            width: 100%;
+            height: 10%;
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+
+        }
+
+        @font-face {
+            font-family: "MyFont";
+            src: url(../static/fonts/WHOOPASS.TTF);
+        }
+
+        .myInfo {
+            font-family: MyFont;
+        }
+        @font-face {
+            font-family: "Amazon_font";
+            src: url("../static/fonts/Amazonas.ttf");
+        }
+        .Amazon{
+            font-family: Amazon_font;
+            color: white;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        *:focus {
+            outline: none;
+        }
+
+        body {
+            font-family: Arial;
+            background: url("../static/img/mohamad-rashidi-717605-unsplash.jpg");
+
+            /*filter: blur(8px);
+            -webkit-filter: blur(8px);*/
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 50px;
+        }
+
+        .login {
+            margin: 20px auto;
+            width: 300px;
+        }
+
+        .login-screen {
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 5px
+        }
+
+        .app-title {
+            text-align: center;
+            color: #777;
+        }
+
+        .login-form {
+            text-align: center;
+        }
+
+        .control-group {
+            margin-bottom: 10px;
+        }
+
+        input {
+            text-align: center;
+            background-color: #ECF0F1;
+            border: 2px solid transparent;
+            border-radius: 3px;
+            font-size: 16px;
+            font-weight: 200;
+            padding: 10px 0;
+            width: 250px;
+            transition: border .5s;
+        }
+
+        input:focus {
+            border: 2px solid #ac2925;
+            box-shadow: none;
+        }
+
+        .btn {
+            border: 2px solid transparent;
+            background: #ac2925;
+            color: #ffffff;
+            font-size: 16px;
+            line-height: 25px;
+            padding: 10px 0;
+            text-decoration: none;
+            text-shadow: none;
+            border-radius: 3px;
+            box-shadow: none;
+            transition: 0.25s;
+            display: block;
+            width: 250px;
+            margin: 0 auto;
+        }
+
+        .btn:hover {
+            background-color: #ac2925;
+        }
+
+        .login-link {
+            font-size: 12px;
+            color: #444;
+            display: block;
+            margin-top: 12px;
+        }
+
+    </style>
+
+
+</head>
+
+<body id="">
+<div class="login">
+    <div class="login-screen">
+        <div class="app-title">
+            <h1 class="myInfo" style="color: #ac2925">TehranCar</h1>
+            <p>Login</p>
+        </div>
+        {% if error %}
+            <p class=error class=Amazon style="text-align: center ; background-color: #1d2124 ;color: white; font-family:Amazon_font" ><strong class="Amazon">Error:</strong> {{ error }}</p>
+        {% endif %}
+        <form class="login-form" action="http://127.0.0.1:5000/web/login" method="POST">
+            <div class="control-group">
+                <input type="text" class="login-field" value="" placeholder="username" id="login-name" name="username"
+                       required>
+                <label class="login-field-icon fui-user" for="login-name" required></label>
+            </div>
+
+            <input type="password" class="login-field" value="" placeholder="password" id="login-pass" name="password"
+                   required>
+            <label class="login-field-icon fui-lock" for="login-pass" required></label>
+        <p><input class="btn btn-primary btn-large btn-block" href="#" type="submit" value="Login"/></p>
+
+        </form>
+
+
+        <a class="login-link" href="#" style="text-align: center">Lost your password?</a>
+        <a class="login-link" href="index.html" style="text-align: center">Back to Home Page</a>
+    </div>
+</div>
+</div>
+</body>
+</html>

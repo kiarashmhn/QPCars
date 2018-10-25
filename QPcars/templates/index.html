@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="../static/img/icon.png">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/normalize.css">
+    <link rel="apple-touch-icon" href="../static/apple-touch-icon.png">
+
+    <script src="../static/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>TC</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+    <style>
+
+
+        @font-face {
+            font-family: "MyFont";
+            src: url(../static/fonts/WHOOPASS.TTF);
+        }
+
+        .myInfo {
+            font-family: MyFont;
+        }
+        @font-face {
+            font-family: "Amazon_font";
+            src: url("../static/fonts/Amazonas.ttf");
+        }
+        .Amazon{
+            font-family: Amazon_font;
+        }
+
+        .parallex {
+            background-image: url("../static/img/arman-taherian-651527-unsplash.jpg");
+            height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        .parallex1 {
+            /*background-image: url("back2_p.png");*/
+            background-color: #eff0f1;
+            height: 100%;
+            background-attachment: scroll;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #parallex2 {
+            background-image: url("../static/img/farzad-mohsenvand-704464-unsplash.jpg");
+           /* background-color: #eff0f1;*/
+            height: 30%;
+            y: 100px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        /* location */
+
+        svg {
+            fill: red;
+            stroke: black;
+            stroke-width: .5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 200, 200;
+            stroke-dashoffset: -39;
+            transition: stroke-dashoffset 0.5s;
+        }
+
+        html1 {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        html1 {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .square {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 30%;
+            left: 0;
+            margin: auto;
+            width: 300px;
+            height: 300px;
+            animation-name: rotate;
+            animation-duration: .8s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+            animation-delay: 5.6s;
+        }
+
+        .line {
+            background: #ac2925;
+            position: absolute;
+            animation-duration: .8s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+
+        .line.vertical {
+            margin-left: -1px;
+            width: 2px;
+            animation-name: vertical-draw-line, color-change, color-change-none;
+        }
+
+        .line.horizontal {
+            margin-top: -1px;
+            height: 2px;
+            animation-name: horizontal-draw-line, color-change, color-change-none;
+        }
+
+        .line.one {
+            left: 0;
+            top: 0;
+            animation-delay: 0s, 6.4s, 8.8s;
+        }
+
+        .line.two {
+            bottom: 0;
+            left: 0;
+            animation-delay: 0.8s, 6.4s, 8.8s;
+        }
+
+        .line.three {
+            bottom: 0;
+            right: 0;
+            animation-delay: 1.6s, 6.4s, 8.8s;
+        }
+
+        .line.four {
+            top: 0;
+            right: 0;
+            animation-delay: 2.4s, 6.4s, 8.8s;
+        }
+
+        .line.five {
+            left: 25%;
+            animation-delay: 3.2s, 6.4s, 8.8s;
+        }
+
+        .line.seven {
+            left: 50%;
+            animation-delay: 4s, 6.4s, 8.8s;
+        }
+
+        .line.nine {
+            left: 75%;
+            animation-delay: 4.8s, 6.4s, 8.8s;
+        }
+
+        .line.six {
+            top: 25%;
+            animation-delay: 3.6s, 6.4s, 8.8s;
+        }
+
+        .line.eight {
+            top: 50%;
+            animation-delay: 4.4s, 6.4s, 8.8s;
+        }
+
+        .line.ten {
+            top: 75%;
+            animation-delay: 5.2s, 6.4s, 8.8s;
+        }
+
+        .circle {
+            opacity: 0;
+            border-radius: 50%;
+            border: 2px solid #ac2925;
+            animation-name: color-change-border;
+            animation-direction: normal;
+            animation-duration: .8s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+
+        .circle.eleven {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 101%;
+            height: 101%;
+            margin-left: -1px;
+            margin-top: -1px;
+            animation-name: color-change-border, color-change-border-reverse, border-radius-change, large-circle-bg, circle-appear;
+            animation-delay: 6.4s, 7.2s, 8s, 8.8s, 7.2s;
+        }
+
+        .circle.twelve {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 52%;
+            height: 52%;
+            animation-name: color-change-border, color-change-border-reverse, small-circle-bg, circle-appear;
+            animation-delay: 6.4s, 8s, 8.8s, 7.2s;
+        }
+
+        @keyframes vertical-draw-line {
+            0% {
+                height: 0;
+            }
+            100% {
+                height: 300px;
+            }
+        }
+
+        @keyframes horizontal-draw-line {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 300px;
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(45deg);
+            }
+        }
+
+        @keyframes color-change {
+            0% {
+                background: #ac2925;
+            }
+            100% {
+                background: #e0e0e0;
+            }
+        }
+
+        @keyframes color-change-none {
+            0% {
+                background: #e0e0e0;
+            }
+            100% {
+                background: transparent;
+            }
+        }
+
+        @keyframes color-change-border {
+            0% {
+                border-color: #ac2925;
+            }
+            100% {
+                border-color: #e0e0e0;
+            }
+        }
+
+        @keyframes circle-appear {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes color-change-border-reverse {
+            0% {
+                border-color: #e0e0e0;
+            }
+            100% {
+                border-color: #ac2925;
+            }
+        }
+
+        @keyframes border-radius-change {
+            0% {
+                border-radius: 50%;
+            }
+            100% {
+                border-bottom-right-radius: 0;
+            }
+        }
+
+        @keyframes large-circle-bg {
+            0% {
+                background: none;
+            }
+            100% {
+                background: #ac2925;
+            }
+        }
+
+        @keyframes small-circle-bg {
+            0% {
+                background: #ac2925;
+            }
+            100% {
+                background: #fff;
+            }
+        }
+
+
+
+        .column1 {
+            float: left;
+            width: 30%;
+
+        }
+
+
+
+
+        @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+        a, a:hover {
+            text-decoration: none;
+        }
+
+        .socialbtns, .socialbtns ul, .socialbtns li {
+            margin: 0;
+            padding: 5px;
+        }
+
+        .socialbtns li {
+            list-style: none outside none;
+            display: inline-block;
+        }
+
+        .socialbtns .fa {
+            width: 42px;
+            height: 42px;
+            color: #FFF;
+            background-color:  #ac2925;
+            padding-top: 12px;
+            transition: all ease 0.5s;
+            -moz-transition: all ease 0.5s;
+            -webkit-transition: all ease 0.5s;
+            -o-transition: all ease 0.5s;
+        }
+
+        .socialbtns .fa:hover {
+            border-radius: 5px;
+            -moz-border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -o-border-radius: 20px;
+            transition: all ease 0.5s;
+            -moz-transition: all ease 0.5s;
+            -webkit-transition: all ease 0.5s;
+            -o-transition: all ease 0.5s;
+        }
+
+
+    </style>
+
+
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" style="box-sizing: border-box!important;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand myInfo" href="#" style="color: #ac2925">Tehran car</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Book</a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="Hp.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
+<!--start of page-->
+<div class="row">
+            <div class="parallex">
+                <!-- location -->
+                <div class="square-wrap html1">
+                    <div class="square">
+                        <div class="line one vertical"></div>
+                        <div class="line two horizontal"></div>
+                        <div class="line three vertical"></div>
+                        <div class="line four horizontal"></div>
+
+                        <div class="line five vertical"></div>
+                        <div class="line six horizontal"></div>
+                        <div class="line seven vertical"></div>
+                        <div class="line eight horizontal"></div>
+                        <div class="line nine vertical"></div>
+                        <div class="line ten horizontal"></div>
+
+                        <div class="eleven circle"></div>
+                        <div class="twelve circle"></div>
+                    </div>
+                </div>
+                <h1 class="myInfo col-md-6" style="margin-top: 40% ; margin-left: 42%; color: #ac2925">Tehran car</h1>
+            </div>
+        </div>
+<!--book of car-->
+<div class="row">
+        <div class=" parallex1">
+            <div class="col-md-11">
+                <br>
+                <br>
+                <br>
+                <br>
+            <h2 class="Amazon" style="margin-left: 10% ;text-align: center">
+                Renting has never been easier<br>
+                Convenient hourly and daily rentals. Insurance included.
+            </h2>
+
+            </div>
+            <div class="col-md-10" style="text-align: center ; margin-left: 11.5%">
+                <div class="column1" >
+                    <h4 class="Amazon">Hassle free</h4>
+                    <p style=" font-size: 10px">Signup for free with no monthly or annual fees.<br> No more lines or paperwork</p>
+                </div>
+                <div class="column1" >
+                    <h4 class="Amazon">Unlimited choice</h4>
+                    <p style=" font-size: 10px">Thousands of cars to choose from. Rent hourly or daily.</p>
+                </div>
+                <div class="column1" >
+                    <h4 class="Amazon">Insurance included</h4>
+                    <p style=" font-size: 10px">All rentals include insurance and 24/7 roadside assistance.</p>
+                </div>
+            </div>
+           <div class="w3-content" style="max-width:1100px; margin-left: 17% ; text-align: center">
+            <div class="w3-row-padding">
+                <div class="w3-half w3-margin-bottom column1">
+                    <img src="../static/img/6572131-tehran-wallpapers.jpg" alt="Norway" style="width:100%">
+                    <div class="w3-container w3-white">
+                        <h3>KIA,sportage</h3>
+                        <p class="w3-opacity">Cost: $1000</p>
+                        <p>Km : 1000</p>
+                        <button class="w3-button w3-margin-bottom">Book</button>
+                    </div>
+                </div>
+                <div class="w3-half w3-margin-bottom column1">
+                    <img src="../static/img/6572131-tehran-wallpapers.jpg" alt="Austria" style="width:100%">
+                    <div class="w3-container w3-white">
+                        <h3>hyundai, tucson</h3>
+                        <p class="w3-opacity">Cost: $3900</p>
+                        <p>Km : 1000</p>
+                        <button class="w3-button w3-margin-bottom">Book</button>
+                    </div>
+                </div>
+                <div class="w3-half w3-margin-bottom column1">
+                    <img src="../static/img/6572131-tehran-wallpapers.jpg" alt="Austria" style="width:100%">
+                    <div class="w3-container w3-white">
+                        <h3>BMW, i8</h3>
+                        <p class="w3-opacity">Cost: $200</p>
+                        <p>Km : 1000</p>
+                        <button class="w3-button w3-margin-bottom">Book</button>
+                    </div>
+                </div>
+            </div>
+           </div>
+            <div class="w3-content" style="max-width:1100px; margin-left: 17%; text-align: center">
+                <div class="w3-row-padding">
+                    <div class="w3-half w3-margin-bottom column1">
+                        <img src="../static/img/6572131-tehran-wallpapers.jpg" alt="Norway" style="width:100%">
+                        <div class="w3-container w3-white">
+                            <h3>iran khodro, dana</h3>
+                            <p class="w3-opacity">Cost: $7900</p>
+                            <p>Km : 1000</p>
+                            <button class="w3-button w3-margin-bottom">Book</button>
+                        </div>
+                    </div>
+                    <div class="w3-half w3-margin-bottom column1">
+                        <img src="../static/img/6572131-tehran-wallpapers.jpg" alt="Austria" style="width:100%">
+                        <div class="w3-container w3-white">
+                            <h3>saipa,131</h3>
+                            <p class="w3-opacity">Cost: $540</p>
+                            <p>PKm : 1000</p>
+                            <button class="w3-button w3-margin-bottom">Book</button>
+                        </div>
+                    </div>
+                    <div class="w3-half w3-margin-bottom column1">
+                        <img src="../static/img/6572131-tehran-wallpapers.jpg" alt="Austria" style="width:100%">
+                        <div class="w3-container w3-white">
+                            <h3>mazda , 3 new</h3>
+                            <p class="w3-opacity">Cost:  $400</p>
+                            <p>Km : 1000</p>
+                            <button class="w3-button w3-margin-bottom">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<!--footer-->
+<div>
+    <div>
+        <div id="parallex2">
+            <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+                <br/>
+                 <div align="center" class="socialbtns">
+                     <ul>
+                         <li><a href="#" class="fa fa-lg fa-facebook"></a></li>
+                         <li><a href="#" class="fa fa-lg fa-twitter"></a></li>
+                         <li><a href="#" class="fa fa-lg fa-google-plus"></a></li>
+                         <li><a href="#" class="fa fa-lg fa-github"></a></li>
+                         <li><a href="#" class="fa fa-lg fa-linkedin"></a></li>
+                         <li><a href="#" class="fa fa-lg fa-instagram"></a></li>
+                     </ul>
+                 </div>
+             </footer>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>

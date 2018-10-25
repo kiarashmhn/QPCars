@@ -17,7 +17,9 @@
 <body>
 
 <div class="bg-image"></div>
-
+{% if error %}
+    <p class=error class=Amazon style="text-align: center ; background-color: #1d2124 ;color: white; font-family:Amazon_font" ><strong class="Amazon">Error:</strong> {{ error }}</p>
+{% endif %}
 <form id="msform" action="http://127.0.0.1:5000/web/signup" method="POST">
   <ul id="progressbar">
     <li class="active">Personal Information</li>

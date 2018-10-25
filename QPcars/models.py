@@ -8,7 +8,7 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20), unique=False)
     username = db.Column(db.String(80))
-    surName = db.Column(db.String(20), unique=False)
+    lastName = db.Column(db.String(20), unique=False)
     age = db.Column(db.Integer)
     identificationId = db.Column(db.Integer, unique=True)
     address = db.Column(db.String(200))
@@ -19,6 +19,7 @@ class User(db.Model, UserMixin):
     authenticated = db.Column(db.Boolean)
     mobile_num = db.Column(db.String(15))
     phone_num = db.Column(db.String(15))
+
     @property
     def password(self):
         raise AttributeError('password: write-only field')
@@ -30,21 +31,13 @@ class User(db.Model, UserMixin):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
-    """def __init__(self,name,password,surName,age,id,address,gender,postalCode,username,email):
-        self.name = name
-        self.password_hash = generate_password_hash(password)
-        self.surName = surName
-        self.age = age
-        self.identificationId = id
-        self.address = address
-        self.gender = gender
-        self.postalCode = postalCode
-        self.username = username
-        self.email = email
-    """
     @staticmethod
     def get_by_username(username):
         return User.query.filter_by(username=username).first()
+
+    @staticmethod
+    def get_by_email(email):
+        return User.query.filter_by(email = email).first()
 
     def __repr__(self):
         return "<User '{}'>".format(self.username)
@@ -53,14 +46,17 @@ class User(db.Model, UserMixin):
         return {
             'name' : self.name,
             'password' : self.password_hash,
-            'surName' : self.surName,
+            'lastName' : self.lastName,
             'age' : self.age,
             'identificationId' : self.identificationId,
             'address' : self.address,
             'gender' : self.gender,
             'postalCode' : self.postalCode,
             'username' : self.username,
-            'email' : self.email}
+            'email' : self.email,
+            'mobile_num': self.mobile_num,
+            'phone_num': self.mobile_num
+        }
 
 
 class Car:

@@ -39,7 +39,7 @@ def signup():
         user = User(name=req.get("name"),
                     username=req.get("username"),
                     password=req.get("password"),
-                    surName=req.get("surName"),
+                    lastName=req.get("lastName"),
                     age=req.get("age"),
                     id=req.get("id"),
                     address=req.get("address"),
@@ -105,7 +105,35 @@ def web_signup_page():
 
 @app.route('/web/signup')
 def web_signup():
-    date = datetime.strptime(request.form["birthday"], '%d, %m, %Y')
+    name = request.form["name"]
+    lastname = request.form["family"]
+    id = request.form["IdNumber"]
+    age = request.form["age"]
+    mobile_num = request.form["mobileNumber"]
+    phone_num = request.form["phoneNumber"]
+    username = request.form["username"]
+    email = request.form["email"]
+    gender = request.form["gender"]
+    password = request.form["pass"]
+    cpass = request.form["cpass"]
+    error = None
+    if User.get_by_username(username) is not None or User.get_by_email(email) is not None:
+        error = 'Username or email is already taken'
+    if password == cpass:
+        u = User(name=name,username=username,
+                 lastName=lastname,age=age,
+                 identificationId=id,gender=gender,
+                 mobile_num=mobile_num,phone_num=phone_num,
+                 email=email,password=password)
+        db.session.add(u)
+        db.session.commit()
+        login_user(u)
+        print("signed in")
+    else:
+        error = 'The two passwords are different!'
+    if error:
+        return render_template('signup.html',error = error)
+    return redirect(url_for('home'))
 
 
 @app.route('/web/home')

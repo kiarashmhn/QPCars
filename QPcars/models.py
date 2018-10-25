@@ -17,7 +17,8 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(120))
     password_hash = db.Column(db.String)
     authenticated = db.Column(db.Boolean)
-
+    mobile_num = db.Column(db.String(15))
+    phone_num = db.Column(db.String(15))
     @property
     def password(self):
         raise AttributeError('password: write-only field')

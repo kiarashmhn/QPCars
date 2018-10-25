@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 from flask import Flask, request, jsonify, redirect, render_template, url_for, flash
 from flask_login import LoginManager
 from flask_login import login_required, login_user, logout_user, current_user
@@ -79,13 +80,13 @@ def list():
         return jsonify([user.serialize() for user in users])
 
 
-@app.route('/web')
-def web():
+@app.route('/web/login_page')
+def web_login_page():
     return render_template('Hp.html', error=None)
 
 
 @app.route('/web/login', methods=["POST"])
-def login_web():
+def web_login():
     un = request.form["username"]
     ps = request.form["password"]
     u = User.get_by_username(un)
@@ -95,6 +96,16 @@ def login_web():
     else:
         error = 'Invalid credentials'
         return render_template('Hp.html', error=error)
+
+
+@app.route('/web/signup_page')
+def web_signup_page():
+    return render_template('signup.html', error=None)
+
+
+@app.route('/web/signup')
+def web_signup():
+    date = datetime.strptime(request.form["birthday"], '%d, %m, %Y')
 
 
 @app.route('/web/home')
